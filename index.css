@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Playfair+Display:wght@500&family=Roboto&display=swap');
+* {
+    font-family: 'Amatic SC', cursive;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    background-color: #FFFFFF;
+}
+
+/* HEADER: copy and paste it in other pages */
+header {
+    height: 90px;
+    background-color: #2C3C6C;
+}
+
+.header_wrapper {
+    padding: 0;
+    list-style: none;
+    background-color: #2C3C6C;
+
+    height: 90px;
+    align-content: center;
+    align-items: center;
+    display: grid;
+    grid-template:
+        "logo ........... ......"
+        "logo primary-nav search";
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+#site_logo {
+    width: 35%;
+    padding-top: 10px;
+}
+
+.header_links {
+    align-content: center;
+    align-items: center;
+}
+
+.header_links li {
+    display: inline;
+    background-color: #2C3C6C;
+}
+
+.header_links a {
+    color: white;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    padding: 20px;
+}
+
+.header_links a:hover {
+    color: #2C3C6C;
+    background-color: #B7C1E1;
+    border-radius: 40px;
+}
+
+#search_bar {
+    width: 200px;
+    color: black;
+    display: flex;
+    padding: 10px;
+    margin: 20px;
+    border: none;
+    border-radius: 40px;
+    background-color: #B7C1E1;
+}
+
+input[type="search"] {
+    height: 24px;
+    width: 170px;
+    border: none;
+    background: transparent;
+    margin: 0;
+    padding: 0px 3px;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid transparent;
+    border-radius: inherit;
+}
+
+input[type="search"]::placeholder {
+    color: rgb(42, 42, 42);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+button[type="submit"] {
+    text-indent: -999px;
+    overflow: hidden;
+    width: 30px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid transaprent;
+    background: transparent url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"%3E%3Cpath fill="none" stroke="%232c3c6c" stroke-linecap="round" stroke-width="2" d="m21 21l-4.486-4.494M19 10.5a8.5 8.5 0 1 1-17 0a8.5 8.5 0 0 1 17 0Z"%2F%3E%3C%2Fsvg%3E') no-repeat center;
+    cursor: pointer;
+    opacity: 0.6;
+    border: none;
+}
+
+button[type="submit"]:hover {
+    opacity: 1;
+}
+
+button[type="submit"]:focus,
+input[type="search"]:focus {
+    box-shadow: 0 0 3px 0 #2C3C6C;
+    border-color: #2C3C6C;
+    outline: none;
+}
+
+/* code for header ends here */
+
+/* body */
+.main_wrapper {
+    display: grid;
+    align-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1440px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 270px 600px;
+    gap: 10px 0px;
+    grid-template-areas:
+        "welcome"
+        "sample"
+        "trending";
+    }
+
+.welcome {
+    grid-area: welcome;
+    text-align: center;
+}
+
+.welcome_wrapper {
+    display: grid;
+} 
+
+.welcome_wrapper img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    grid-column: 1;
+    grid-row: 1;
+    width: 55%;
+}
+
+.welcome_wrapper > #hello {
+    grid-row: 1;
+    grid-column: 1;
+    align-self: end;
+}
+
+#hello {
+    font-family: 'Playfair Display', serif;
+    color: #2C3C6C;
+    background-color: rgba(255, 255, 255, 0.90);
+    font-size: 40px;
+}
+
+.sample {
+    grid-area: sample;
+}
+
+.sample_wrapper {
+    display: grid;
+    align-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    grid-template-columns: 60% 40%;
+    width: 80%;
+}
+
+.review_wrapper {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    column-gap: 10px;
+}
+
+.cover_review {
+    text-align: right;
+}
+
+.review_wrapper p {
+    margin: 12px;
+}
+
+.book_review img {
+    float: left;
+    margin-right: 10px;
+}
+
+.reviewer_nickname {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 19px;
+}
+
+.book_title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#book_author {
+    font-family: 'Playfair Display', serif;
+    font-weight: 100;
+}
+
+.star_rating{
+    font-family: 'Playfair Display', serif;
+    color: #FFD100;
+}
+
+.review_text {
+    font-family: 'Roboto', sans-serif;
+}
+
+.register {
+    text-align: center;
+}
+
+#reg_text {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+}
+
+#create_acc {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    width: 380px;
+    height: 70px;
+    border-radius: 40px;
+    cursor: pointer;
+    color: white;
+    background-color: #2C3C6C;
+    border: none;
+}
+
+#create_acc:hover {
+    background-color: #3d5498;
+}
+
+.trending {
+    grid-area: trending;
+}
+
+.trending_wrapper {
+    display: grid;
+    align-content: center;
+    align-items: center;
+    margin: 0 auto;
+    grid-template-columns: repeat(5, 300px);
+}
+
+.trending_wrapper div {
+    text-align: center;
+}
+
+.trending_title {
+    font-family: 'Playfair Display', serif;
+    color: #2C3C6C;
+    font-size: 30px;
+    padding-bottom: 3px;
+    margin-bottom: 5px;
+    border-bottom-width: 2px;
+    border-bottom: solid;
+}
+.author_name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+#see_more {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-style: italic;
+    float: right;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+#see_more:hover {
+    color: #2C3C6C;
+    cursor: pointer;
+}
+
+footer {
+    display: grid;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #2C3C6C;
+    align-content: center;
+    align-items: center;
+    height: 130px;
+}
+.footer_wrapper {
+    /* height: 90px; */
+    list-style: none;
+    text-align: center;
+}
+
+.footer_wrapper a {
+    color: white;
+    text-decoration: none;
+    padding: 50px;
+}
+
+.footer_wrapper a:hover {
+    color: #2C3C6C;
+    background-color: #B7C1E1;
+    border-radius: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer_wrapper li {
+    display: inline-block;
+    font-size: 20px;
+}
