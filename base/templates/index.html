@@ -1,3 +1,4 @@
+{% load static %} 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BetterReads | Landing Page </title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="{% static '/css/index.css' %}">
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 </head>
 
@@ -15,11 +16,11 @@
     <header>
         <div class="header_wrapper">
             <a href="/" title="BetterReads | Home Page" aria-label="logo">
-                <img id="site_logo" src="img/logo.png" alt="Site Logo">
+                <img id="site_logo" src="{% static '/images/logo.png' %}" alt="Site Logo">
             </a>
 
             <nav class="header_links" aria-label="primary-nav">
-                <li> <a href="#sign_in">Sign In</a></li>
+                <li> <a href="login">Sign In</a></li>
                 <li> <a href="#acc">Create Account</a></li>
                 <li> <a href="#members">Members</a></li>
                 <li> <a href="#challenges">Challenges</a></li>
@@ -36,7 +37,7 @@
     <div class="main_wrapper">
         <div class="welcome">
             <div class="welcome_wrapper">
-                <img src="img/welcome_front.png" alt="welcome_image">
+                <img src="{% static '/images/welcome_front.png' %}" alt="welcome_image">
                 <p id="hello">Track books you’ve read. <br>
                     Save those you want to read. <br>
                     Tell your friends what’s good.</p>
@@ -47,10 +48,10 @@
             <div class="sample_wrapper">
                 <div class="review_wrapper">
                     <div class="cover_review">
-                        <img src="img/OnEarthWereBrieflyGorgeous.png" alt="On Earth We're Briefly Gorgeous">
+                        <img src="{% static '/images/oceanvuong.png' %}" alt="On Earth We're Briefly Gorgeous">
                     </div>
                     <div class="book_review">
-                        <img src="img/avatar.png" alt="reviewer_icon">
+                        <img src="{% static '/images/avatar.png' %}" alt="reviewer_icon">
                         <p class="reviewer_nickname">jane_reads_books</p>
                         <br>
                         <p class="book_title">On Earth We're Briefly Gorgeous <br>
@@ -73,27 +74,27 @@
             <div class="trending_title">Trending Books</div>
             <div class="trending_wrapper">
                 <div class="book_1">
-                    <img src="img/John Green The Anthro.png" alt="The Anthropocene Reviewed by John Green">
+                    <img src="{% static '/images/johngreen.png' %}" alt="The Anthropocene Reviewed by John Green">
                     <p class="book_title">The Anthropocene Reviewed</p>
                     <p class="author_name">by John Green</p>
                 </div>
                 <div class="book_2">
-                    <img src="img/Know My Name.png" alt="Know My Name by Chanel Miller">
+                    <img src="{% static '/images/chanelmiller.png' %}"alt="Know My Name by Chanel Miller">
                     <p class="book_title">Know My Name</p>
                     <p class="author_name">by Chanel Miller</p>
                 </div>
                 <div class="book_3">
-                    <img src="img/Normal People.png" alt="Normal People by Sally Rooney">
+                    <img src="{% static '/images/sallyrooney.png' %}" alt="Normal People by Sally Rooney">
                     <p class="book_title">Normal People</p>
                     <p class="author_name">by Sally Rooney</p>
                 </div>
                 <div class="book_4">
-                    <img src="img/The Seven Husbands.png" alt="The Seven Husbands of Evelyn Hugo by Taylor Jenkins Reid">
+                    <img src="{% static '/images/taylorjenkinsreid.png' %}" alt="The Seven Husbands of Evelyn Hugo by Taylor Jenkins Reid">
                     <p class="book_title">The Seven Husbands of Evelyn Hugo</p>
                     <p class="author_name">by Taylor Jenkins Reid</p>
                 </div>
                 <div class="book_5">
-                    <img src="img/Upstream.png" alt="Upstream by Mary Oliver">
+                    <img src="{% static '/images/welcome_front.png' %}" alt="Upstream by Mary Oliver">
                     <p class="book_title">Upstream</p>
                     <p class="author_name">by Mary Oliver</p>
                 </div>

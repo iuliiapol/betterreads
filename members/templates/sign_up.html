@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BetterReads</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static '/css/signup.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="header_wrapper">
+      <a href="/" title="BetterReads | Home Page" aria-label="logo">
+        <img id="site_logo" src="{% static '/images/logo.png' %}" alt="Site Logo">
+      </a>
+
+      <nav class="header_links" aria-label="primary-nav">
+        <li> <a href="login">Sign In</a></li>
+        <li> <a href="#acc">Create Account</a></li>
+        <li> <a href="#members">Members</a></li>
+        <li> <a href="#challenges">Challenges</a></li>
+      </nav>
+
+      <form id="search_bar" aria-label="search">
+        <input type="search" placeholder="Search books, authors...">
+        <!-- button will act as the icon -->
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </header>
+  <div class="wrapper">
+    <div class="container">
+      <h1>Sign up</h1>
+      <div class="form_container">
+        <form method="POST">
+          {% csrf_token %}
+
+          <!-- First Name input -->
+          <div class="first_name">
+            <label for="fname">First Name</label>
+            <br>
+            <input type="fname" name="fname" class="form-control" placeholder=" John" />
+          </div>
+
+          <!-- Last Name input -->
+          <div class="last_name">
+            <label for="lname">Last Name</label>
+            <br>
+            <input type="lname" name="lname" class="form-control" placeholder=" Doe" />
+          </div>
+
+          <!-- Email input -->
+          <div class="email_input">
+            <label for="email">Email</label>
+            <br>
+            <input type="email" name="email" class="form-control" placeholder=" johndoe@gmail.com" />
+          </div>
+
+          <!-- Username input -->
+          <div class="username">
+            <label for="username">Username
+              {% if messages %}
+              {% for message in messages %}
+              <div style="color: red">{{ message }}</div>
+              {% endfor %}
+              {% endif %}
+            </label>
+
+            <input type="username" name="username" class="form-control" placeholder=" johnD456" />
+          </div>
+
+          <!-- Password input -->
+          <div class="password_input">
+            <label for="password">Password</label>
+            <br>
+            <input type="password" name="password" class="form-control" />
+          </div>
+
+          <br>
+
+          <!-- Submit button -->
+          <button type="submit" class="signup">Sign up</button>
+
+          <!-- Return button -->
+          <div class="register" style="text-align: center;">
+            <p>Changed your mind? <a href="{% url 'index' %}">Go back to the homepage</a></p>
+          </div>
+
+        </form>
+      </div>
+      <img src="{% static '/images/welcome_front.png' %}" alt="Avatars reading books and holding books">
+
+      
+    </div>
+  </div>
+</body>
+
+</html>
