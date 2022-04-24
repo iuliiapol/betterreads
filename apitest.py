@@ -1,5 +1,6 @@
 import json
 from urllib.request import urlopen
+from urllib.parse import quote
 
 # terminal testing
 searchPhrase = input("Search for a book...: ").strip()
@@ -10,7 +11,7 @@ def search(searchPhrase):
     books = []
 
     for searchKey in searchKeys:
-        resp = urlopen(api + searchKey + ':' + searchPhrase)
+        resp = urlopen(api + searchKey + ':' + quote(searchPhrase))
         book_data = json.load(resp)
         for book in book_data['items']:
             info = book['volumeInfo']
@@ -40,4 +41,4 @@ def search(searchPhrase):
 # terminal testing
 searchResponse = search(searchPhrase)
 
-# print(searchResponse)
+print(searchResponse)
