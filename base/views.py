@@ -4,6 +4,7 @@ from urllib.request import urlopen
 from urllib.parse import quote
 from .forms import ReviewForm
 from .models import Review
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -61,7 +62,7 @@ def individual(request, isbn):
     author = book_data['items'][0]['volumeInfo']['authors'][0]
     description = book_data['items'][0]['volumeInfo']['description']
 
-    reviews = Review.objects.all
+    reviews = Review.objects.filter(isbn=isbn)
 
   # image api
     api2 = "https://www.googleapis.com/customsearch/v1?key=AIzaSyBeDvA8b63hEcqSR8GnUXcFRvleMGQTiac&cx=39129221a73b988b5&searchType=image&q="
@@ -90,5 +91,5 @@ def review(request, isbn):
 
 
 
-
-    
+def dashboard(request):
+  return render(request, 'dashboard.html', {})

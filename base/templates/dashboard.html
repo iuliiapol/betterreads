@@ -7,10 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BetterReads</title>
   {% load static %}
-  <link rel="stylesheet" href="{% static '/css/results.css' %}">
+  <link rel="stylesheet" href="{% static '/css/dashboard.css' %}">
 </head>
 
 <body>
+
   <header>
     <div class="header_wrapper">
       <a href="/" title="BetterReads | Home Page" aria-label="logo">
@@ -31,42 +32,6 @@
 
     </div>
   </header>
-
-  <div class="wrapper">
-    <div class="container">
-      <h1>Search results for {{searched}}</h1>
-
-      <div class="partition"></div>
-
-      <div class="results">
-        {% for book in results %}
-        <a href="/book/{{book.ISBN}}"><div class="book">
-          <div class="title">
-            <h2>{{book.Title}}</h2>
-          </div>
-          <div class="cover">
-            <img src="{{book.CoverThumbnail}}" alt="">
-          </div>
-
-          <div class="author">
-            <h4>{{book.Authors.0}}</h4>
-          </div>
-
-          <div class="rating">
-            {{book.Rating}}
-          </div>
-
-          <div class="description">
-            <p>{{book.Description}}</p>
-          </div>
-
-
-        </div></a>
-        {% endfor %}
-      </div>
-
-    </div>
-  </div>
 
   <footer>
     <div class="footer_wrapper">

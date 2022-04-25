@@ -7,11 +7,11 @@
   <title>BetterReads</title>
 </head>
 <body>
-
   <form method="POST">
     {% csrf_token %} 
     {{review.as_p}}
     <input type="submit" class="submit" value="Save">
   </form>
+
 </body>
 </html>

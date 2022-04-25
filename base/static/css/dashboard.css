@@ -118,3 +118,40 @@ input[type="search"]:focus {
 }
 
 /* code for header ends here */
+
+
+
+/* Footer */
+footer {
+  display: grid;
+  margin: 0 auto;
+  padding: 0;
+  background-color: #2C3C6C;
+  align-content: center;
+  align-items: center;
+  height: 130px;
+}
+.footer_wrapper {
+  /* height: 90px; */
+  list-style: none;
+  text-align: center;
+}
+
+.footer_wrapper a {
+  color: white;
+  text-decoration: none;
+  padding: 50px;
+}
+
+.footer_wrapper a:hover {
+  color: #2C3C6C;
+  background-color: #B7C1E1;
+  border-radius: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.footer_wrapper li {
+  display: inline-block;
+  font-size: 20px;
+}
