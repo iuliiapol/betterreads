@@ -19,7 +19,7 @@ class Review(models.Model):
   rating = models.DecimalField(
     max_digits = 2, 
     decimal_places=1,
-    validators=[MaxValueValidator(5)]
+    validators=[MaxValueValidator(5,"Rating system stops at 5!")]
   )
 
   date = models.DateField(auto_now=True)
