@@ -38,7 +38,19 @@ def search(searchPhrase):
     uniqueBooks = list({ each['ISBN'] : each for each in books }.values())
     return uniqueBooks
 
+
+def imageSearch(searchPhrase):
+    api = "https://www.googleapis.com/customsearch/v1?key=AIzaSyBeDvA8b63hEcqSR8GnUXcFRvleMGQTiac&cx=39129221a73b988b5&searchType=image&q="
+    resp = urlopen(api + quote(searchPhrase + ' book'))
+
+    img_data = json.load(resp)
+    firstImg = img_data['items'][0]
+    firstImgLink = firstImg['link']
+
+    return firstImgLink
+
 # terminal testing
 searchResponse = search(searchPhrase)
+imageSearchResponse = imageSearch(searchResponse[0]['Title'])
 
-print(searchResponse)
+# print(searchResponse)
