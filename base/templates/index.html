@@ -26,10 +26,11 @@
                 <li> <a href="#challenges">Challenges</a></li>
             </nav>
 
-            <form id="search_bar" aria-label="search">
-                <input type="search" placeholder="Search books, authors...">
+            <form id="search_bar" aria-label="search" method="POST" action="{%url 'results' %}">
+                <input type="search" placeholder="Search books, authors..." name="searched">
                 <!-- button will act as the icon -->
                 <button type="submit">Search</button>
+                {% csrf_token %}
             </form>
         </div>
     </header>

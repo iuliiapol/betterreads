@@ -1,5 +1,6 @@
 import json
 from urllib.request import urlopen
+from urllib.parse import quote
 
 # terminal testing
 searchPhrase = input("Search for a book...: ").strip()
@@ -10,7 +11,7 @@ def search(searchPhrase):
     books = []
 
     for searchKey in searchKeys:
-        resp = urlopen(api + searchKey + ':' + searchPhrase)
+        resp = urlopen(api + searchKey + ':' + quote(searchPhrase))
         book_data = json.load(resp)
         for book in book_data['items']:
             info = book['volumeInfo']
@@ -20,13 +21,13 @@ def search(searchPhrase):
                         'Description': info.get('description', ''),
                         'Categories': info.get('categories', ''),
                         'Rating': info.get('averageRating', 0),
-                        'Ratings Count': info.get('ratingsCount', 0),
-                        'Page Count': info.get('pageCount', 0),
-                        'Publishing Date': info.get('publishedDate', 0)}
+                        'RatingsCount': info.get('ratingsCount', 0),
+                        'PageCount': info.get('pageCount', 0),
+                        'PublishingDate': info.get('publishedDate', 0)}
             if 'imageLinks' in info:
-                helpfulInfo['Cover Thumbnail'] = info.get('imageLinks')['thumbnail'].replace('1', '10')
+                helpfulInfo['CoverThumbnail'] = info.get('imageLinks')['thumbnail'].replace('1', '10')
             else:
-                helpfulInfo['Cover Thumbnail'] = ''
+                helpfulInfo['CoverThumbnail'] = ''
             
             if 'industryIdentifiers' in info:
                 helpfulInfo['ISBN'] = info.get('industryIdentifiers')[0]['identifier']
@@ -40,4 +41,5 @@ def search(searchPhrase):
 # terminal testing
 searchResponse = search(searchPhrase)
 
-# print(searchResponse)
+print(searchResponse)
+

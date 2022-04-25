@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BetterReads</title>
+</head>
+<body>
+  {%csrf_token%}
+  <div class="wrapper">
+    <div class="container">
+      <div class="cover">
+        <img src="{{image}}" alt="" width="350px" height="550px">
+      </div>
+
+      <div class="title">
+        <h1>
+          {{title}}
+        </h1>
+      </div>
+
+      <div class="author">
+        <h2>{{author}}</h2>
+      </div>
+
+      <div class="description">
+        <p>{{description}}</p>
+      </div>
+
+      <div class="rating">
+        {{rating}}
+      </div>
+
+      <a href="/review/{{ISBN}}"><button class="review">Review</button></a>
+    </div>
+
+
+    <div class="reviews_container">
+      {% for review in reviews %}
+      <div class="review">
+      <h4>{{review.user}}</h4>
+      <h6>{{review.rating}}</h6>
+      <p>{{review.review}}</p>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+
+</body>
+</html>

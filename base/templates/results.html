@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BetterReads</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static '/css/search.css' %}">
+</head>
+
+<header>
+  <div class="header_wrapper">
+      <a href="/" title="BetterReads | Home Page" aria-label="logo">
+          <img id="site_logo" src="{% static '/images/logo.png' %}" alt="Site Logo">
+      </a>
+
+      <nav class="header_links" aria-label="primary-nav">
+          <li> <a href="login">Sign In</a></li>
+          <li> <a href="#acc">Create Account</a></li>
+          <li> <a href="#members">Members</a></li>
+          <li> <a href="#challenges">Challenges</a></li>
+      </nav>
+
+      <form id="search_bar" aria-label="search" method="POST" action="{%url 'results' %}">
+          <input type="search" placeholder="Search books, authors..." name="searched">
+          <!-- button will act as the icon -->
+          <button type="submit">Search</button>
+          {% csrf_token %}
+      </form>
+  </div>
+</header>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <h1>Search results for <span>
+          <div class="search_term">{{searched}}</div>
+        </span></h1>
+
+      <div class="partition"></div>
+
+      <div class="results">
+        {% for book in results %}
+        <a href="/book/{{book.ISBN}}"><div class="book">
+          <div class="title">
+            <h2>{{book.Title}}</h2>
+          </div>
+          <div class="cover">
+            <img src="{{book.CoverThumbnail}}" alt="">
+          </div>
+
+          <div class="author">
+            <h4>{{book.Authors.0}}</h4>
+          </div>
+
+          <div class="rating">
+            {{book.Rating}}
+          </div>
+
+          <div class="description">
+            <p>{{book.Description}}</p>
+          </div>
+
+
+        </div></a>
+        <p>{{book}}</p>
+        {% endfor %}
+      </div>
+
+
+    </div>
+  </div>
+</body>
+
+</html>
