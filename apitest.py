@@ -21,13 +21,13 @@ def search(searchPhrase):
                         'Description': info.get('description', ''),
                         'Categories': info.get('categories', ''),
                         'Rating': info.get('averageRating', 0),
-                        'RatingsCount': info.get('ratingsCount', 0),
-                        'PageCount': info.get('pageCount', 0),
-                        'PublishingDate': info.get('publishedDate', 0)}
+                        'Ratings Count': info.get('ratingsCount', 0),
+                        'Page Count': info.get('pageCount', 0),
+                        'Publishing Date': info.get('publishedDate', 0)}
             if 'imageLinks' in info:
-                helpfulInfo['CoverThumbnail'] = info.get('imageLinks')['thumbnail'].replace('1', '10')
+                helpfulInfo['Cover Thumbnail'] = info.get('imageLinks')['thumbnail'].replace('1', '10')
             else:
-                helpfulInfo['CoverThumbnail'] = ''
+                helpfulInfo['Cover Thumbnail'] = ''
             
             if 'industryIdentifiers' in info:
                 helpfulInfo['ISBN'] = info.get('industryIdentifiers')[0]['identifier']
@@ -42,4 +42,3 @@ def search(searchPhrase):
 searchResponse = search(searchPhrase)
 
 print(searchResponse)
-
