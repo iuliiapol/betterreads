@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Playfair+Display:wght@500&family=Roboto&display=swap');
+* {
+    font-family: 'Amatic SC', cursive;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Roboto', sans-serif;
+}
+.container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10vh 140vh;
+}
+
+header {
+    height: 90px;
+    background-color: #2C3C6C;
+}
+
+.header_wrapper {
+    padding: 0;
+    list-style: none;
+    background-color: #2C3C6C;
+
+    height: 90px;
+    align-content: center;
+    align-items: center;
+    display: grid;
+    grid-template:
+        "logo ........... ......"
+        "logo primary-nav search";
+    margin: 0 auto;
+    max-width: 1440px;
+    
+}#site_logo {
+    width: 35%;
+    padding-top: 10px;
+}
+
+.header_links {
+    align-content: center;
+    align-items: center;
+}
+
+.header_links li {
+    display: inline;
+    background-color: #2C3C6C;
+}
+
+.header_links a {
+    color: white;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    padding: 20px;
+}
+
+.header_links a:hover {
+    color: #2C3C6C;
+    background-color: #B7C1E1;
+    border-radius: 40px;
+}
+
+#search_bar {
+    width: 200px;
+    color: black;
+    display: flex;
+    padding: 10px;
+    margin: 20px;
+    border: none;
+    border-radius: 40px;
+    background-color: #B7C1E1;
+}
+
+input[type="search"] {
+    height: 24px;
+    width: 170px;
+    border: none;
+    background: transparent;
+    margin: 0;
+    padding: 0px 3px;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid transparent;
+    border-radius: inherit;
+}
+
+input[type="search"]::placeholder {
+    color: rgb(42, 42, 42);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+h1{
+    grid-row: 1/2;
+    color: #2C3C6C;
+    font-family: Playfair Display;
+}
+.results {
+    grid-row: 2/3;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.footer_wrapper{
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color:#2C3C6C;
+    color: white;
+}
+.foot_link{
+    list-style: none;
+    font-size: 20px;
+    margin-left: 60px;
+    margin-top: 20px;
+    color:white;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.foot_link:hover {
+    color: #2C3C6C;
+    background-color: #B7C1E1;
+    border-radius: 40px;
+    padding: 10px;
+    
+}
+.footer_wrapper li{
+    list-style: none;
+}
