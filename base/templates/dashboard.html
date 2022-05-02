@@ -8,9 +8,12 @@
   <title>BetterReads</title>
   {% load static %}
   <link rel="stylesheet" href="{% static '/css/dashboard.css' %}">
+  <!-- <link rel="stylesheet" href="dashboard.css"> -->
 </head>
 
 <body>
+<div class="container">
+
 
   <header>
     <div class="header_wrapper">
@@ -32,6 +35,78 @@
 
     </div>
   </header>
+  <div class="trending">
+    <div class="trending_title">Trending Books</div>
+    <div class="trending_wrapper">
+        <div class="book_1">
+            <img src="{% static '/images/johngreen.png' %}" alt="The Anthropocene Reviewed by John Green">
+            <!-- <img src="johngreen.png" alt="The Anthropocene Reviewed by John Green"> -->
+            <p class="book_title">The Anthropocene Reviewed</p>
+            <p class="author_name">by John Green</p>
+        </div>
+        <div class="book_2">
+          <!-- <img src="chanelmiller.png"alt="Know My Name by Chanel Miller">   -->
+          <img src="{% static '/images/chanelmiller.png' %}"alt="Know My Name by Chanel Miller">
+            <p class="book_title">Know My Name</p>
+            <p class="author_name">by Chanel Miller</p>
+        </div>
+        <div class="book_3">
+            <img src="{% static '/images/sallyrooney.png' %}" alt="Normal People by Sally Rooney">
+            <!-- <img src="sallyrooney.png" alt="Normal People by Sally Rooney"> -->
+            <p class="book_title">Normal People</p>
+            <p class="author_name">by Sally Rooney</p>
+        </div>
+        <div class="book_4">
+            <img src="{% static '/images/taylorjenkinsreid.png' %}" alt="The Seven Husbands of Evelyn Hugo by Taylor Jenkins Reid">
+            <!-- <img src="taylorjenkinsreid.png" alt="The Seven Husbands of Evelyn Hugo by Taylor Jenkins Reid"> -->
+            <p class="book_title">The Seven Husbands of Evelyn Hugo</p>
+            <p class="author_name">by Taylor Jenkins Reid</p>
+        </div>
+        <div class="book_5">
+            <img src="{% static '/images/MaryOliver.png' %}" alt="Upstream by Mary Oliver">
+            <!-- <img src="MaryOliver.png" alt="Upstream by Mary Oliver"> -->
+            <p class="book_title">Upstream</p>
+            <p class="author_name">by Mary Oliver</p>
+        </div>
+    </div>
+    <a id="see_more" href="#"> See More <span class="iconify" data-icon="akar-icons:arrow-right" style="color: #2c3c6c;"></span> </a>
+</div>
+<div class="recent">
+
+  <div class="recent_title">
+    <h3>Recent Activity</h3>
+  </div>
+  <hr>
+  <div class="book_pic1">
+    <img src="{% static '/images/psalm.jpg' %}" class="psalm">
+  </div>
+  
+    <div class="info1">
+      <img src="{% static '/images/avatar.png' %}" class="avatar">
+      <p class="name">jane_reads_books</p>
+      <p class="book_title">A Psalm for the Wild Built 
+        <span id="book_author">by Becky Chambers</span></p>
+        <p class="star_rating">★★★★ 1/2</p>
+        <p class="review_text">One of my favorite reads of the year! Such beautiful prose.  Really excited to read more from Ocean. </p>
+    </div>
+ 
+  <div class="book_pic2">
+    <img src="{% static '/images/Earth.jpg' %}" class="Earth">
+  </div>
+  
+ 
+  <div class="info2">
+    <img src="{% static '/images/avatar.png' %}" class="avatar">
+    <p class="name">jane_reads_books</p>
+    <p class="book_title">On Earth We're Briefly Gorgeous 
+      <span id="book_author">by Ocean Vuong</span></p>
+      <p class="star_rating">★★★★ </p>
+      <p class="review_text"> This was a really intersting read. I finished in two days, because I just could not put the book down. I think I will try to check out <br> more books by the author. It lost a star, because I found a few of the characters annoying, but it was eary to overlook. The plot was amazing. </p>
+
+  </div>
+
+  
+</div>
 
   <footer>
     <div class="footer_wrapper">
@@ -40,6 +115,9 @@
       <li><a href="">Contact</a></li>
     </div>
   </footer>
+
+</div>
+  
 </body>
 
 </html>

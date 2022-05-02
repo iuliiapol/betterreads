@@ -158,3 +158,8 @@ footer {
     display: inline-block;
     font-size: 20px;
 }
+h1 {
+    color:#2C3C6C;
+    font-family: 'Playfair Display';
+    font-weight: bold;
+}
