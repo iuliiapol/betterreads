@@ -32,9 +32,9 @@
       <form id="search_bar" aria-label="search" method="POST" action="{%url 'results' %}">
         <input type="search" placeholder="Search books, authors..." name="searched">
         <!-- button will act as the icon -->
-        <button type="submit">Search</button>
+        <input type="image" src="{% static 'images/looking_glass.png' %}" width="30px" height="30px" alt="looking glass" name="search" class="looking_glass">
         {% csrf_token %}
-      </form>
+    </form>
     </div>
   </header>
   <div class="wrapper">

@@ -9,12 +9,6 @@ body {
     margin: 0 auto;
     background-color: #FFFFFF;
 }
-.recent{
-    grid-template-columns: 25vw 75vw;
-    grid-template-rows: 20vh 40vh 40vh;
-    display: grid;
-}
-
 /* HEADER: copy and paste it in other pages */
 header {
     height: 90px;
@@ -50,6 +44,8 @@ header {
 .header_links li {
     display: inline;
     background-color: #2C3C6C;
+    position: relative;
+bottom: 8px;
 }
 
 .header_links a {
@@ -69,7 +65,7 @@ header {
 }
 
 #search_bar {
-    width: 200px;
+    width: 300px;
     color: black;
     display: flex;
     padding: 10px;
@@ -77,6 +73,8 @@ header {
     border: none;
     border-radius: 40px;
     background-color: #B7C1E1;
+    position: relative;
+    right: 180px;
 }
 
 input[type="search"] {
@@ -104,11 +102,12 @@ button[type="submit"] {
     width: 30px;
     padding: 0;
     margin: 0;
-    border: 1px solid transaprent;
     background: transparent url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"%3E%3Cpath fill="none" stroke="%232c3c6c" stroke-linecap="round" stroke-width="2" d="m21 21l-4.486-4.494M19 10.5a8.5 8.5 0 1 1-17 0a8.5 8.5 0 0 1 17 0Z"%2F%3E%3C%2Fsvg%3E') no-repeat center;
     cursor: pointer;
     opacity: 0.6;
     border: none;
+    position: relative;
+    left: 110px;
 }
 
 button[type="submit"]:hover {
@@ -160,7 +159,12 @@ footer {
   display: inline-block;
   font-size: 20px;
 }
+.trending { 
+    position: relative;
+    top: 40px;
+}
 .trending_wrapper {
+    position: relative;
     display: grid;
     align-content: center;
     align-items: center;
@@ -176,10 +180,6 @@ footer {
     font-family: 'Playfair Display', serif;
     color: #2C3C6C;
     font-size: 40px;
-    padding-bottom: 3px;
-    margin-bottom: 5px;
-    border-bottom-width: 2px;
-    border-bottom: solid;
 }
 .author_name {
     font-family: 'Playfair Display', serif;
@@ -188,7 +188,7 @@ footer {
 
 #see_more {
     font-family: 'Playfair Display', serif;
-    font-size: 30px;
+    font-size: 25px;
     font-style: italic;
     float: right;
     text-decoration: none;
@@ -209,16 +209,19 @@ footer {
     margin-left: 30px;
 
 }
-.recent_title {
-    grid-row: 1/2;
-    grid-column: 1/3;
+
+h3 {
     font-family: 'Playfair Display';
     font-size: 40px;
     color: #2C3C6C;
- 
+
 }
-h3{
-    font-family: 'Playfair Display';
+
+.partition { 
+    width: 1440px; 
+    border: 1px solid #2C3C6C; 
+    position: relative;
+    bottom: 30px;
 }
 .Earth{
     width: 215px;
@@ -274,4 +277,136 @@ h3{
 .star_rating{
     color: gold;
     font-size: 18px;
+}
+
+.container { 
+    width: 1440px;
+    margin: 0 auto;
+}
+
+#notif {
+    position: relative; 
+    top: 4px;
+}
+
+#profile {
+    position: relative;
+    top: 0px;
+}
+
+.iconify {
+    position: relative;
+    top: 3px;
+}
+
+
+/* Reviews */
+.reviews {
+    display: flex;
+    flex-direction: column;
+}
+
+.reviews .review .info {
+    display: flex; 
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.review { 
+    display: flex; 
+    flex-direction: row;
+    margin-bottom: 40px;
+    height: 400px;
+}
+
+.review_partition {
+    border-bottom: 3px solid #2C3C6C; 
+    width: 1440px;
+    position: relative;
+    bottom: 64px;
+
+}
+.interactions {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100px;
+}
+
+.review .username p{
+    font-family: 'Playfair Display', sans-serif;
+    position: relative;
+    left: 80px;
+    bottom: 25px;
+    font-size: 22px;
+}
+
+.review .title h5 { 
+    font-family: 'Playfair Display', sans-serif; 
+    font-size: 22px;
+    position: relative;
+    bottom: 30px;
+}
+
+.review .title .author {
+    font-family: 'Playfair Display', sans-serif; 
+    font-size: 22px; 
+    font-weight: 200; 
+}
+
+.review .rating p {
+    font-family: 'Playfair Display', sans-serif;
+    position: relative;
+    bottom: 80px;
+    font-size: 30px;
+    color: goldenrod;
+}
+
+.review .text p {
+    font-family: 'Roboto', sans-serif; 
+    font-size: 20px;
+    width: 1200px;
+    position: relative;
+    bottom: 110px;
+}
+
+.review .interactions {
+    position: relative;
+    bottom: 100px;
+}
+
+.like {
+    width: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.like p {
+    margin-left: 8px;
+    position: relative;
+    bottom: 25px;
+    font-size: 20px;
+}
+
+.comment {
+    margin-left: 20px;
+    width: 50px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 2px;
+}
+
+.comment p {
+    margin-left: 8px;
+    position: relative;
+    bottom: 25px;
+    font-size: 20px;
+}
+
+
+
+
+.review .interactions p {
+    font-family: 'Playfair Display',sans-serif; 
 }
