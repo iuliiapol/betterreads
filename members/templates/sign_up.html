@@ -10,6 +10,9 @@
   <link rel="stylesheet" type="text/css" href="{% static '/css/signup.css' %}">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
     rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="120x120" href="{% static '/images/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static '/images/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static '/images/favicon-16x16.png' %}">
 </head>
 
 <body>
@@ -31,7 +34,7 @@
         <!-- button will act as the icon -->
         <button type="submit">Search</button>
         {% csrf_token %}
-    </form>
+      </form>
     </div>
   </header>
   <div class="wrapper">
@@ -96,7 +99,7 @@
       </div>
       <img src="{% static '/images/welcome_front.png' %}" alt="Avatars reading books and holding books">
 
-      
+
     </div>
   </div>
 </body>

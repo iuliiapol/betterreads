@@ -45,6 +45,8 @@ header {
 .header_links li {
     display: inline;
     background-color: #2C3C6C;
+    position: relative;
+    bottom: 8px;
 }
 
 .header_links a {
@@ -64,7 +66,7 @@ header {
 }
 
 #search_bar {
-    width: 200px;
+    width: 300px;
     color: black;
     display: flex;
     padding: 10px;
@@ -72,6 +74,8 @@ header {
     border: none;
     border-radius: 40px;
     background-color: #B7C1E1;
+    position: relative;
+    right: 180px;
 }
 
 input[type="search"] {
@@ -99,11 +103,12 @@ button[type="submit"] {
     width: 30px;
     padding: 0;
     margin: 0;
-    border: 1px solid transaprent;
     background: transparent url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"%3E%3Cpath fill="none" stroke="%232c3c6c" stroke-linecap="round" stroke-width="2" d="m21 21l-4.486-4.494M19 10.5a8.5 8.5 0 1 1-17 0a8.5 8.5 0 0 1 17 0Z"%2F%3E%3C%2Fsvg%3E') no-repeat center;
     cursor: pointer;
     opacity: 0.6;
     border: none;
+    position: relative;
+    left: 110px;
 }
 
 button[type="submit"]:hover {
@@ -117,12 +122,94 @@ input[type="search"]:focus {
     outline: none;
 }
 
+#notif {
+    position: relative; 
+    top: 4px;
+}
+
+#profile {
+    position: relative;
+    top: 0px;
+}
+
 /* code for header ends here */
 
 /* Body */
-a {
+.wrapper {
+    width: 1440px;
+    margin: 0 auto;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+h1 { 
+    font-family: 'Playfair Display', sans-serif;
+}
+
+.search_term { 
+    margin-left: 4px;
+    width: auto; 
+    background-color: #252E47; 
+    color: #FFFFFF;
+    border-radius: 10px; 
+    padding: 4px 8px;
+    font-family: 'Playfair Display', sans-serif;
+}
+
+.partition { 
+    width: 1200px; 
+    border: 1px solid #2C3C6C;
+}
+
+
+.results .info .title {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 18px;
+}
+
+.results .book {
+    margin-top: 8px;
+    display: flex; 
+    flex-direction: row;
+}
+
+a, a:visited { 
+    text-decoration: none;
+    color: #000000;
+}
+
+.results .info { 
+    display: flex; 
+    flex-direction: column;
+    margin-left: 15px;
     text-decoration: none;
 }
+
+.info .title h2 {
+    font-family: 'Playfair Display', sans-serif;
+}
+
+.info .author h4 {
+    position: relative; 
+    bottom: 40px;
+    font-family: 'Playfair Display', sans-serif; 
+    font-size: 18px;
+}
+
+.info .description p { 
+    font-family: 'Roboto', sans-serif; 
+    position: relative;
+    bottom: 50px;
+}
+.results .cover { 
+    margin-top: 30px;
+}
+
+
+
 
 /*  Footer  */
 footer {

@@ -33,13 +33,15 @@ def results(request):
                         'Description': info.get('description', ''),
                         'Categories': info.get('categories', ''),
                         'Rating': info.get('averageRating', 0),
-                        'Ratings Count': info.get('ratingsCount', 0),
+                        'RatingsCount': info.get('ratingsCount', 0),
                         'Page Count': info.get('pageCount', 0),
                         'Publishing Date': info.get('publishedDate', 0)}
             if 'imageLinks' in info:
                 helpfulInfo['CoverThumbnail'] = info.get('imageLinks')['thumbnail']
             else:
                 helpfulInfo['CoverThumbnail'] = ''
+
+            helpfulInfo['Description'] = helpfulInfo['Description'][0:1000]
             
             if 'industryIdentifiers' in info:
                 helpfulInfo['ISBN'] = info.get('industryIdentifiers')[0]['identifier']
