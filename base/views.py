@@ -47,6 +47,7 @@ def results(request):
                 helpfulInfo['ISBN'] = ''
             books.append(helpfulInfo)
     uniqueBooks = list({ each['ISBN'] : each for each in books }.values())
+    uniqueBooks = list({ each['Title'] : each for each in uniqueBooks }.values())
 
     return render(request, 'results.html', {"searched": searched, "results": uniqueBooks})
   else: 
