@@ -410,3 +410,8 @@ h3 {
 .review .interactions p {
     font-family: 'Playfair Display',sans-serif; 
 }
+
+a {
+    text-decoration: none; 
+    color: black;
+}
