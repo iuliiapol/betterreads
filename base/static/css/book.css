@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Playfair+Display:wght@500&family=Roboto&display=swap');
+
+* {
+    font-family: 'Amatic SC', cursive;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    background-color: #FFFFFF;
+}
+
+/* HEADER: copy and paste it in other pages */
+header {
+    height: 90px;
+    background-color: #2C3C6C;
+}
+
+.header_wrapper {
+    padding: 0;
+    list-style: none;
+    background-color: #2C3C6C;
+
+    height: 90px;
+    align-content: center;
+    align-items: center;
+    display: grid;
+    grid-template:
+        "logo ........... ......"
+        "logo primary-nav search";
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+#site_logo {
+    width: 35%;
+    padding-top: 10px;
+}
+
+.header_links {
+    align-content: center;
+    align-items: center;
+}
+
+.header_links li {
+    display: inline;
+    background-color: #2C3C6C;
+}
+
+.header_links a {
+    color: white;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    padding: 20px;
+}
+
+.header_links a:hover {
+    color: #2C3C6C;
+    background-color: #B7C1E1;
+    border-radius: 40px;
+}
+
+#search_bar {
+    width: 200px;
+    color: black;
+    display: flex;
+    padding: 10px;
+    margin: 20px;
+    border: none;
+    border-radius: 40px;
+    background-color: #B7C1E1;
+}
+
+input[type="search"] {
+    height: 24px;
+    width: 170px;
+    border: none;
+    background: transparent;
+    margin: 0;
+    padding: 0px 3px;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid transparent;
+    border-radius: inherit;
+}
+
+input[type="search"]::placeholder {
+    color: rgb(42, 42, 42);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+button[type="submit"] {
+    text-indent: -999px;
+    overflow: hidden;
+    width: 30px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid transaprent;
+    background: transparent url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"%3E%3Cpath fill="none" stroke="%232c3c6c" stroke-linecap="round" stroke-width="2" d="m21 21l-4.486-4.494M19 10.5a8.5 8.5 0 1 1-17 0a8.5 8.5 0 0 1 17 0Z"%2F%3E%3C%2Fsvg%3E') no-repeat center;
+    cursor: pointer;
+    opacity: 0.6;
+    border: none;
+}
+
+button[type="submit"]:hover {
+    opacity: 1;
+}
+
+button[type="submit"]:focus,
+input[type="search"]:focus {
+    box-shadow: 0 0 3px 0 #2C3C6C;
+    border-color: #2C3C6C;
+    outline: none;
+}
+
+/* code for header ends here */
+
+.main_wrapper {
+    display: grid;
+    align-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1440px;
+    grid-template-columns: 75% 23%;
+    background-color: #B7C1E1;
+    column-gap: 2%;
+    padding: 60px;
+}
+
+.column1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.column2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.book_info {
+    display: grid;
+    grid-template-columns: 300px auto;
+}
+
+.title_auth {
+    line-height: 1em;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+}
+
+.author {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+}
+
+.description {
+    font-family: 'Playfair Display', serif;
+    padding-top: 30px;
+    font-size: 19px;
+    font-weight: 200;
+}
+
+.reviews_section>h2 {
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+    margin-bottom: -2px;
+}
+
+.solid_line {
+    border-top: 1px solid #000000;
+}
+
+.rev_header>.iconify-inline {
+    font-size: 40px;
+    position: relative;
+    top: 7px;
+}
+
+
+/* styling for reviews */
+.review {
+    font-size: 17px;
+}
+
+.rev_auth {
+    font-weight: 900;
+    font-style: normal;
+}
+
+.rev_by {
+    font-style: normal;
+    font-weight: 100;
+}
+
+.rev_rating {
+    font-family: 'Playfair Display', serif;
+    color: GoldenRod;
+    padding-left: 20px;
+}
+
+.rev_text {
+    padding: 10px;
+}
+
+.like_rev {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    display: inline-block;
+    width: 100px;
+}
+
+.num_likes {
+    font-family: 'Playfair Display', serif;
+    padding-left: 15px;
+    font-size: 15px;
+}
+
+.like_button {
+    background: url('https://api.iconify.design/ant-design/heart-outlined.svg?color=%232c3c6c') no-repeat center center / contain;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.like_button:hover {
+    background: url('https://api.iconify.design/ant-design/heart-twotone.svg?color=%232c3c6c') no-repeat center center / contain !important;
+}
+
+.like_stats {
+    padding-left: 6px;
+}
+
+/* book review section */
+.book_panel {
+    display: grid;
+    grid-template-rows: 32.31% 35.38% 32.31%;
+    height: 400px;
+    background-color: #DDE1EC;
+    border-radius: 8px;
+}
+
+.book_menu {
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    align-items: center;
+    align-content: center;
+    border-bottom: 2px solid #2C3C6C;
+}
+
+.bm_item>span {
+    font-family: 'Playfair Display', serif;
+
+}
+
+.read_button,
+.toread_button,
+.bookshelf_button {
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    padding-top: 10px;
+}
+
+.bm_item>button {
+    height: 70px;
+    width: 70px;
+    border: none;
+}
+
+.read_button {
+    background: url('https://api.iconify.design/fa6-solid/book-bookmark.svg?color=%232c3c6c') no-repeat center center / contain;
+}
+
+.toread_button {
+    background: url('https://api.iconify.design/fluent/book-clock-24-filled.svg?color=%232c3c6c') no-repeat center center / contain;
+}
+
+.bookshelf_button {
+    background: url('https://api.iconify.design/bi/bookshelf.svg?color=%232c3c6c') no-repeat center center / contain;
+}
+
+.bm_item {
+    text-align: center;
+}
+
+.jrating>div {
+    width: 50px !important;
+    height: 50px !important;
+    line-height: 50px !important;
+    background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 24 24'%3E%3Cpath d='M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z' fill='gray'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E") !important;
+}
+
+.jrating .jrating-over {
+    background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E") !important;
+    opacity: 0.7 !important;
+}
+
+
+.jrating .jrating-selected {
+    background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 24 24' fill='GoldenRod'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E") !important;
+}
+
+.book_stars {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 2px solid #2C3C6C;
+}
+
+.book_stars > p {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: -13px;
+}
+
+
+.book_revlink {
+    text-align: center;
+}
+
+.book_revlink > a {
+    font-family: 'Playfair Display', serif;
+    color: black;
+    font-size: 35px;
+    text-decoration: none;
+}
+
+.book_revlink:hover {
+    font-style: italic;
+}
+

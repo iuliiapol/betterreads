@@ -1,55 +1,154 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BetterReads</title>
+  <link rel="stylesheet" href="{% static '/css/book.css' %}">
+  <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+
+  <script src="{% static 'js/book.js' %}" type="module"></script>
+
+  <!-- star rating plug in -->
+  <script src="https://jsuites.net/v4/jsuites.js"></script>
+  <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
   <link rel="apple-touch-icon" sizes="120x120" href="{% static '/images/apple-touch-icon.png' %}">
   <link rel="icon" type="image/png" sizes="32x32" href="{% static '/images/favicon-32x32.png' %}">
   <link rel="icon" type="image/png" sizes="16x16" href="{% static '/images/favicon-16x16.png' %}">
 </head>
+
 <body>
+
+  <header>
+    <div class="header_wrapper">
+      <a href="/" title="BetterReads | Home Page" aria-label="logo">
+        <img id="site_logo" src="{% static '/images/logo.png' %}" alt="Site Logo">
+      </a>
+
+      <nav class="header_links" aria-label="primary-nav">
+        <li> <a href="login">Sign In</a></li>
+        <li> <a href="signup">Create Account</a></li>
+        <li> <a href="#members">Members</a></li>
+        <li> <a href="#challenges">Challenges</a></li>
+      </nav>
+
+      <form id="search_bar" aria-label="search" method="POST" action="{%url 'results' %}">
+        <input type="search" placeholder="Search books, authors..." name="searched">
+        <!-- button will act as the icon -->
+        <button type="submit">Search</button>
+        {% csrf_token %}
+      </form>
+    </div>
+  </header>
+
   {%csrf_token%}
-  <div class="wrapper">
-    <div class="container">
-      <div class="cover">
-        <img src="{{image}}" alt="" width="350px" height="550px">
+  <div class="main_wrapper">
+
+    <div class="column1">
+      <div class="book_info">
+        <div class="cover">
+          <img src="{{image}}" alt="" width="280px" height="450px">
+        </div>
+
+        <div class="book_description">
+          <div class="title_auth">
+            <h1 class="title">
+              {{title}}
+            </h1>
+            <div class="author">
+              <h2 class="author">by {{author}}</h2>
+            </div>
+          </div>
+
+
+          <div class="description">
+            {{description}}
+          </div>
+        </div>
+
       </div>
 
-      <div class="title">
-        <h1>
-          {{title}}
-        </h1>
-      </div>
+      <div class="reviews">
+        <div class="reviews_section">
+          <h2>Popular Reviews</h2>
+        </div>
+        <hr class="solid_line">
 
-      <div class="author">
-        <h2>{{author}}</h2>
-      </div>
+        <div class="reviews_container">
+          {% for review in reviews %}
+          <div class="review">
+            <div class="rev_header">
+              <span class="iconify-inline" data-icon="bx:user-circle" style="color: #2c3c6c;"></span>
+              <span class="rev_by">Review by </span>
+              <span class="rev_auth">{{review.user}}</span>
+              <span class="rev_rating">{{review.rating}}</span>
+            </div>
 
-      <div class="description">
-        <p>{{description}}</p>
-      </div>
+            <p class="rev_text">{{review.review}}</p>
 
-      <div class="rating">
-        {{rating}}
-      </div>
+            <div class="like_stats">
+              <button class="like_button">&nbsp&nbsp&nbsp</button>
+              <span class="like_rev">Like review</span>
+              <span class="num_likes">0 likes</span>
 
-      <a href="/review/{{ISBN}}"><button class="review">Review</button></a>
+              <hr class="solid_line">
+            </div>
+
+          </div>
+
+
+          {% endfor %}
+        </div>
+
+      </div>
     </div>
 
+    <div class="column2">
 
-    <div class="reviews_container">
-      {% for review in reviews %}
-      <div class="review">
-      <h4>{{review.user}}</h4>
-      <h6>{{review.rating}}</h6>
-      <p>{{review.review}}</p>
+      <div class="book_panel">
+        <div class="book_menu">
+          <div class="bm_item">
+            <button class="read_button"></button>
+            <br>
+            <span>Read</span>
+          </div>
+          <div class="bm_item">
+            <button class="toread_button"></button>
+            <br>
+            <span>To Read</span>
+          </div>
+          <div class="bm_item">
+            <button class="bookshelf_button"></button>
+            <br>
+            <span>Bookshelf</spans>
+          </div>
+        </div>
+        <div class="book_stars">
+          <p>Rate</p>
+          <div id='rating'></div>
+        </div>
+        <div class="book_revlink">
+          <a href="/review/{{ISBN}}">Review</a>
+        </div>
       </div>
-      {% endfor %}
+
+      <div class="ratings_stats">
+        <p>Number of readers</p>
+        <p>bar</p>
+      </div>
+
+      <div>
+        Tags
+        <p class="tag">Reflective <span class="tag_count">371</span></p>
+      </div>
 
     </div>
+
   </div>
 
 </body>
+
 </html>
