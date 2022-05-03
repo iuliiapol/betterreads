@@ -5,11 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BetterReads</title>
+  {% load static %}
   <link rel="apple-touch-icon" sizes="120x120" href="{% static '/images/apple-touch-icon.png' %}">
   <link rel="icon" type="image/png" sizes="32x32" href="{% static '/images/favicon-32x32.png' %}">
   <link rel="icon" type="image/png" sizes="16x16" href="{% static '/images/favicon-16x16.png' %}">
 </head>
 <body>
+  {{title}}
+  {{author}}
+  <img src="{{cover}}" alt="">
   <form method="POST">
     {% csrf_token %} 
     {{review.as_p}}

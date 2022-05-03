@@ -80,6 +80,20 @@ def individual(request, isbn):
 
 
 def review(request, isbn): 
+  api = f'https://www.googleapis.com/books/v1/volumes?q=isbn:{isbn}'
+  resp = urlopen(api) 
+  book_data = json.load(resp) 
+  title = book_data['items'][0]['volumeInfo']['title']
+  author = book_data['items'][0]['volumeInfo']['authors'][0]
+
+  # image api
+  api2 = "https://www.googleapis.com/customsearch/v1?key=AIzaSyBeDvA8b63hEcqSR8GnUXcFRvleMGQTiac&cx=39129221a73b988b5&searchType=image&q="
+  resp2 = urlopen(api2 + quote(isbn))
+
+  img_data = json.load(resp2)
+  firstImg = img_data['items'][0]
+  firstImgLink = firstImg['link']
+    
   if request.method == "POST":
     form = ReviewForm(request.POST)
     if form.is_valid():
@@ -90,7 +104,7 @@ def review(request, isbn):
       return redirect('individual', isbn)
   else:
     review = ReviewForm 
-    return render(request, 'review.html/', {'review':review})
+    return render(request, 'review.html/', {'review':review, 'title':title, 'author':author, 'cover':firstImgLink})
 
 
 
