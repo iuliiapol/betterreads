@@ -64,19 +64,20 @@ def individual(request, isbn):
     title = book_data['items'][0]['volumeInfo']['title']
     author = book_data['items'][0]['volumeInfo']['authors'][0]
     description = book_data['items'][0]['volumeInfo']['description']
+    cover = book_data['items'][0]['volumeInfo']['imageLinks']['thumbnail']
 
     reviews = Review.objects.filter(isbn=isbn)
 
   # image api
-    api2 = "https://www.googleapis.com/customsearch/v1?key=AIzaSyBeDvA8b63hEcqSR8GnUXcFRvleMGQTiac&cx=39129221a73b988b5&searchType=image&q="
-    resp2 = urlopen(api2 + quote(isbn))
+    # api2 = "https://www.googleapis.com/customsearch/v1?key=AIzaSyBeDvA8b63hEcqSR8GnUXcFRvleMGQTiac&cx=39129221a73b988b5&searchType=image&q="
+    # resp2 = urlopen(api2 + quote(isbn))
 
-    img_data = json.load(resp2)
-    firstImg = img_data['items'][0]
-    firstImgLink = firstImg['link']
+    # img_data = json.load(resp2)
+    # firstImg = img_data['items'][0]
+    # firstImgLink = firstImg['link']
     
 
-    return render(request, 'book.html/', {"title":title, "ISBN":isbn, "description":description, "author":author, "reviews":reviews, "image": firstImgLink})
+    return render(request, 'book.html/', {"title":title, "ISBN":isbn, 'cover':cover, "description":description, "author":author, "reviews":reviews})
 
 
 def review(request, isbn): 
@@ -85,14 +86,15 @@ def review(request, isbn):
   book_data = json.load(resp) 
   title = book_data['items'][0]['volumeInfo']['title']
   author = book_data['items'][0]['volumeInfo']['authors'][0]
+  cover = book_data['items'][0]['volumeInfo']['imageLinks']['thumbnail']
 
   # image api
-  api2 = "https://www.googleapis.com/customsearch/v1?key=AIzaSyBeDvA8b63hEcqSR8GnUXcFRvleMGQTiac&cx=39129221a73b988b5&searchType=image&q="
-  resp2 = urlopen(api2 + quote(isbn))
+  # api2 = "https://www.googleapis.com/customsearch/v1?key=AIzaSyBeDvA8b63hEcqSR8GnUXcFRvleMGQTiac&cx=39129221a73b988b5&searchType=image&q="
+  # resp2 = urlopen(api2 + quote(isbn))
 
-  img_data = json.load(resp2)
-  firstImg = img_data['items'][0]
-  firstImgLink = firstImg['link']
+  # img_data = json.load(resp2)
+  # firstImg = img_data['items'][0]
+  # firstImgLink = firstImg['link']
     
   if request.method == "POST":
     form = ReviewForm(request.POST)
@@ -104,7 +106,7 @@ def review(request, isbn):
       return redirect('individual', isbn)
   else:
     review = ReviewForm 
-    return render(request, 'review.html/', {'review':review, 'title':title, 'author':author, 'cover':firstImgLink})
+    return render(request, 'review.html/', {'review':review, 'title':title, 'author':author, 'cover':cover})
 
 
 
