@@ -1,24 +1,89 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BetterReads</title>
+  <link rel="stylesheet" href="{% static '/css/review.css' %}">
+
   {% load static %}
   <link rel="apple-touch-icon" sizes="120x120" href="{% static '/images/apple-touch-icon.png' %}">
   <link rel="icon" type="image/png" sizes="32x32" href="{% static '/images/favicon-32x32.png' %}">
   <link rel="icon" type="image/png" sizes="16x16" href="{% static '/images/favicon-16x16.png' %}">
 </head>
+
 <body>
-  {{title}}
-  {{author}}
-  <img src="{{cover}}" alt="">
-  <form method="POST">
-    {% csrf_token %} 
-    {{review.as_p}}
-    <input type="submit" class="submit" value="Save">
-  </form>
+
+  <header>
+    <div class="header_wrapper">
+      <a href="/" title="BetterReads | Home Page" aria-label="logo">
+        <img id="site_logo" src="{% static '/images/logo.png' %}" alt="Site Logo">
+      </a>
+
+      <form id="search_bar" aria-label="search" method="POST" action="{%url 'results' %}">
+        <input type="search" placeholder="Search books, authors..." name="searched">
+        <!-- button will act as the icon -->
+        <button type="submit">Search</button>
+        {% csrf_token %}
+      </form>
+
+      <nav class="header_links" aria-label="primary-nav">
+        <li> <a href="#members">Members</a></li>
+        <li> <a href="#challenges">Challenges</a></li>
+        <li id="notif"><img height="40px" width="40px" src="{% static 'images/notification.png' %}"
+            alt="Notifcation bell icon"></li>
+        <li id="profile"><img height="40px" width="40px" src="{% static 'images/profile.png' %}" alt="Profile avatar">
+        </li>
+
+      </nav>
+    </div>
+  </header>
+
+  <div class="main_wrapper">
+    <div class="row1">
+      <div class="book_info">
+        <div class="col1">
+          <img src="{{cover}}" alt="" width="280px" height="450px">
+        </div>
+        <div class="col2">
+
+          <p id="read_title">I read</p>
+
+          <h1 id="book_title">{{title}}</h1>
+          <p id="book_author">{{author}}</p>
+
+          <div id="cal_pic">
+            <label id="cal_label" for="read_on">Read on:</label>
+            <input type="date" id="read_cal" name="read_cal">
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row2">
+      <form method="POST">
+        <div id="rate_area">{% csrf_token %}</div>
+        <div id="rev_area">{{review.as_p}}</div>
+        <input type="submit" class="submit" value="Save">
+      </form>
+    </div>
+  </div>
+
+
+
+
+  <footer>
+    <div class="footer_wrapper">
+      <li><a href="" class="foot_link">About</a></li>
+      <li><a href="" class="foot_link">Terms</a></li>
+      <li><a href="" class="foot_link">Contact</a></li>
+    </div>
+  </footer>
+
 
 </body>
+
 </html>
