@@ -68,7 +68,7 @@ def individual(request, isbn):
 
     reviews = Review.objects.filter(isbn=isbn)
 
-  # image api
+  #image api
     # api2 = "https://www.googleapis.com/customsearch/v1?key=AIzaSyBeDvA8b63hEcqSR8GnUXcFRvleMGQTiac&cx=39129221a73b988b5&searchType=image&q="
     # resp2 = urlopen(api2 + quote(isbn))
 

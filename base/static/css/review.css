@@ -237,3 +237,14 @@ footer {
     display: inline-block;
     font-size: 20px;
   }
+
+
+  .row2{
+      position: relative;
+      top: 150px;
+  }
+
+  .col2 {
+      position: relative;
+      right: 40px;
+  }
