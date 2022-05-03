@@ -124,7 +124,7 @@ input[type="search"]:focus {
 }
 
 #notif {
-    position: relative; 
+    position: relative;
     top: 4px;
 }
 
@@ -331,7 +331,7 @@ input[type="search"]:focus {
     border-bottom: 2px solid #2C3C6C;
 }
 
-.book_stars > p {
+.book_stars>p {
     font-family: 'Playfair Display', serif;
     font-size: 20px;
     margin-bottom: -13px;
@@ -354,7 +354,7 @@ input[type="search"]:focus {
     margin-top: 4px;
 }
 
-#revlink_click:hover{
+#revlink_click:hover {
     font-style: italic;
 }
 
@@ -374,28 +374,115 @@ footer {
     align-content: center;
     align-items: center;
     height: 130px;
-  }
-  .footer_wrapper {
+}
+
+.footer_wrapper {
     /* height: 90px; */
     list-style: none;
     text-align: center;
-  }
-  
-  .footer_wrapper a {
+}
+
+.footer_wrapper a {
     color: white;
     text-decoration: none;
     padding: 50px;
-  }
-  
-  .footer_wrapper a:hover {
+}
+
+.footer_wrapper a:hover {
     color: #2C3C6C;
     background-color: #B7C1E1;
     border-radius: 40px;
     padding-top: 20px;
     padding-bottom: 20px;
-  }
-  
-  .footer_wrapper li {
+}
+
+.footer_wrapper li {
     display: inline-block;
     font-size: 20px;
-  }
+}
+
+/* histogram css */
+.book_histogram {
+    display: flex;
+}
+
+.rev_rating_hist {
+    font-size: 12px;
+    font-family: 'Playfair Display', serif;
+    color: #FFD100;
+    display: inline;
+    margin-top: auto;
+}
+
+.book_histogram {
+    height: 130px;
+    display: flex;
+}
+
+.bars {
+    display: grid;
+    grid-template-columns: repeat(10, 25px);
+    background-color: transparent;
+    margin-top: auto;
+    padding-left: 5px;
+}
+
+.hist_cont {
+    background-color: #434d6e;
+    width: 15px;
+    height: 5px;
+    margin-top: auto;
+}
+
+.hist_cont:hover {
+    background-color: #2C3C6C;
+}
+
+.tooltip {
+    background: white;
+    color: black;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.tooltip span {
+    font-size: 14px;
+    font-family: 'Playfair Display', serif;
+    padding: 6px;
+}
+
+.arrow,
+.arrow::before {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: inherit;
+    /* border: 0.2px solid black; */
+    border-top: none;
+    border-left: none;
+}
+
+.arrow {
+    visibility: hidden;
+}
+
+.arrow::before {
+    visibility: visible;
+    content: '';
+    transform: rotate(45deg);
+}
+
+.tooltip[data-popper-placement^='top']>.arrow {
+    bottom: -4px;
+}
+
+
+.tooltip {
+    /* ... */
+    display: none;
+}
+
+.tooltip[data-show] {
+    display: block;
+}

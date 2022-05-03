@@ -14,6 +14,9 @@
 
   <!-- star rating plug in -->
   <script src="https://jsuites.net/v4/jsuites.js"></script>
+  <!-- popper.js for histogram -->
+  <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+
   <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
   <link rel="apple-touch-icon" sizes="120x120" href="{% static '/images/apple-touch-icon.png' %}">
   <link rel="icon" type="image/png" sizes="32x32" href="{% static '/images/favicon-32x32.png' %}">
@@ -38,8 +41,10 @@
       <nav class="header_links" aria-label="primary-nav">
         <li> <a href="#members">Members</a></li>
         <li> <a href="#challenges">Challenges</a></li>
-        <li id="notif"><img height="40px" width="40px" src="{% static 'images/notification.png' %}" alt="Notifcation bell icon"></li>
-        <li id="profile"><img height="40px" width="40px"src="{% static 'images/profile.png' %}" alt="Profile avatar"></li>
+        <li id="notif"><img height="40px" width="40px" src="{% static 'images/notification.png' %}"
+            alt="Notifcation bell icon"></li>
+        <li id="profile"><img height="40px" width="40px" src="{% static 'images/profile.png' %}" alt="Profile avatar">
+        </li>
 
       </nav>
 
@@ -140,13 +145,97 @@
       </div>
 
       <div class="ratings_stats">
-          <h2 id="ratings_head">Ratings</h2>
+        <h2 id="ratings_head">Ratings</h2>
         <hr class="solid_line">
-        <p>histogram here</p>
-      </div>
 
+        <div class="book_histogram">
+            <span class="rev_rating_hist">★</span>
+            <div class="bars">
+                <span class="hist_cont" id="bar_0"></span>
+                <div class="tooltip" id="tooltip_0" role="tooltip">
+                    <span id="num_0">0</span>
+                    <span>half-★</span>
+                    <span id="per_0">(0%)</span>
+                    <div class="arrow" data-popper-arrow></div>
+                </div>
+
+                <span class="hist_cont" id="bar_1"></span>
+                <div class="tooltip" id="tooltip_1" role="tooltip">
+                    <span id="num_1">0</span>
+                    <span>★</span>
+                    <span id="per_1">(0%)</span>
+                    <div id="arrow" data-popper-arrow></div>
+                </div>
+
+
+                <span class="hist_cont" id="bar_2"></span>
+                <div class="tooltip" id="tooltip_2" role="tooltip">
+                    <span id="num_2">0</span>
+                    <span>★1/2</span>
+                    <span id="per_2">(0%)</span>
+                    <div id="arrow" data-popper-arrow></div>
+                </div>
+
+                <span class="hist_cont" id="bar_3"></span>
+                <div class="tooltip" id="tooltip_3" role="tooltip">
+                    <span id="num_3">0</span>
+                    <span>★★</span>
+                    <span id="per_3">(0%)</span>
+                    <div id="arrow" data-popper-arrow></div>
+                </div>
+
+                <span class="hist_cont" id="bar_4"></span>
+                <div class="tooltip" id="tooltip_4" role="tooltip">
+                    <span id="num_4">0</span>
+                    <span>★★1/2</span>
+                    <span id="per_4">(0%)</span>
+                    <div id="arrow" data-popper-arrow></div>
+                </div>
+
+                <span class="hist_cont" id="bar_5"></span>
+                <div class="tooltip" id="tooltip_5" role="tooltip">
+                    <span id="num_5">0</span>
+                    <span>★★★</span>
+                    <span id="per_5">(0%)</span>
+                    <div id="arrow" data-popper-arrow></div>
+                </div>
+
+                <span class="hist_cont" id="bar_6"></span>
+                <div class="tooltip" id="tooltip_6" role="tooltip">
+                    <span id="num_6">0</span>
+                    <span>★★★1/2</span>
+                    <span id="per_6">(0%)</span>
+                    <div id="arrow" data-popper-arrow></div>
+                </div>
+
+                <span class="hist_cont" id="bar_7"></span>
+                <div class="tooltip" id="tooltip_7" role="tooltip">
+                    <span id="num_7">0</span>
+                    <span>★★★★</span>
+                    <span id="per_7">(0%)</span>
+                    <div id="arrow" data-popper-arrow></div>
+                </div>
+
+                <span class="hist_cont" id="bar_8"></span>
+                <div class="tooltip" id="tooltip_8" role="tooltip">
+                    <span id="num_8">0</span>
+                    <span>★★★★1/2</span>
+                    <span id="per_8">(0%)</span>
+                    <div id="arrow" data-popper-arrow></div>
+                </div>
+
+                <span class="hist_cont" id="bar_9"></span>
+                <div class="tooltip" id="tooltip_9" role="tooltip">
+                    <span id="num_9">0</span>
+                    <span>★★★★★</span>
+                    <span id="per_9">(0%)</span>
+                    <div id="arrow" data-popper-arrow></div>
+                </div>
+            </div>
+            <span class="rev_rating_hist">★★★★★</span>
     </div>
-
+  </div>
+    </div>
   </div>
 
   <footer>

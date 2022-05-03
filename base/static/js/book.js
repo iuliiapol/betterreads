@@ -33,6 +33,121 @@ for (let i = 0; i < test.length; i++) {
     console.log(value_arr);
 }
 
+// popper code starts
+let num_revs = value_arr.length;
+
+const freq_map = value_arr.reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map());
+console.log(freq_map);
+let max_freq;
+
+for (let [key, value] of freq_map) {
+    max_freq = (!max_freq || max_freq < value) ? value : max_freq;
+}
+console.log(max_freq);
+const height_max = 100;
+let i = 0.5;
+let str_i = '';
+let calc_height = 0;
+let item_freq = 0;
+let freq_perc = 0;
+
+for (let y = 0; y < 10; y++) {
+    str_i = i.toString();
+    console.log(str_i);
+
+    if (!freq_map.has(i)) {
+        console.log("Map doesn't have this value " + i);
+        i += 0.5;
+        continue;
+    }
+
+    console.log("Map has value of " + i);
+
+    item_freq = freq_map.get(i); //returns current frequency
+    console.log("Item frequency of" + i + " is " + item_freq);
+    calc_height = (item_freq * height_max) / max_freq;
+    console.log(calc_height);
+
+    //set height of the bar to be
+    document.getElementById(`bar_${y}`).style.height = `${calc_height}px`;
+
+    //set frequency value item_freq to be number of reviews
+    document.getElementById(`num_${y}`).textContent = `${item_freq}`;
+
+    //calculate percentage of that reviews 
+    freq_perc = Math.round(((item_freq * 100) / num_revs));
+    document.getElementById(`per_${y}`).textContent = `${freq_perc}%`;
+    console.log(document.getElementById(`per_${y}`));
+    console.log(freq_perc + "%");
+
+    i += 0.5;
+}
+
+for (let y = 0; y <= 9; y++){
+    console.log("Current popper bar is " + y);
+    const bar = document.querySelector(`#bar_${y}`);
+    const tooltip = document.querySelector(`#tooltip_${y}`);
+    console.log(tooltip);
+
+    //code for poppers
+    const popperInstance = Popper.createPopper(bar, tooltip, {
+        modifiers: [
+            {
+                name: 'offset',
+                options: {
+                    offset: [0, 8],
+                },
+            },
+        ],
+        placement: 'top',
+    });
+
+    function show() {
+        // Make the tooltip visible
+        tooltip.setAttribute('data-show', '');
+
+        // Enable the event listeners
+        popperInstance.setOptions((options) => ({
+            ...options,
+            modifiers: [
+                ...options.modifiers,
+                { name: 'eventListeners', enabled: true },
+            ],
+        }));
+
+        // Update its position
+        popperInstance.update();
+    }
+
+    function hide() {
+        // Hide the tooltip
+        tooltip.removeAttribute('data-show');
+
+        // Disable the event listeners
+        popperInstance.setOptions((options) => ({
+            ...options,
+            modifiers: [
+                ...options.modifiers,
+                { name: 'eventListeners', enabled: false },
+            ],
+        }));
+    }
+
+    const showEvents = ['mouseenter', 'focus'];
+    const hideEvents = ['mouseleave', 'blur'];
+
+    showEvents.forEach((event) => {
+        bar.addEventListener(event, show);
+    });
+
+    hideEvents.forEach((event) => {
+        bar.addEventListener(event, hide);
+    });
+}
+
+// popper code ends
+
+
 function testFunction() {
     let click_id = this.id;
     let element = document.getElementById(`${click_id}`);
