@@ -143,7 +143,6 @@ input[type="search"]:focus {
     margin: 0 auto;
     max-width: 1440px;
     grid-template-columns: 75% 23%;
-    background-color: #B7C1E1;
     column-gap: 2%;
     padding: 60px;
 }
@@ -374,6 +373,9 @@ footer {
     align-content: center;
     align-items: center;
     height: 130px;
+    position: fixed; 
+    bottom: 0;
+    width: 100%;
 }
 
 .footer_wrapper {
